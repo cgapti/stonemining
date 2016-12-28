@@ -1,0 +1,192 @@
+<div class="container" >
+	<div class="row text-center">
+		<div class="col-sm-12">
+			<div class="col-sm-6">
+				<br> <br> <br> <br> <br>
+				<button type="button" class="btn btn-custom"
+					data-toggle="modal" data-target="#workorder">
+					<i class="fa fa-handshake-o fa-5x" aria-hidden="true"></i><br>
+					<span style="font-size: 20px;"><b>&nbsp;&nbsp;Work Order&nbsp;&nbsp;</b></span>
+				</button>
+			</div>
+			<div class="col-sm-6">
+				<br> <br> <br> <br> <br>
+				<button type="button" class="btn btn-custom"
+					data-toggle="modal" data-target="#stonedetails">
+					<i class="fa fa-info fa-5x" aria-hidden="true"></i><br> <span
+						style="font-size: 20px;"><b>&nbsp;&nbsp;Stone Details</b></span>
+				</button>
+			</div>
+			<div class="col-sm-12">
+				<div class="col-sm-6">
+					<br> <br> <br> <br> <br>
+					<button type="button" class="btn btn-custom"
+						data-toggle="modal" data-target="#shareimages">
+						<i class="fa fa-share-alt fa-5x" aria-hidden="true"></i><br>
+						<span style="font-size: 20px;"><b>Share Images</b></span>
+					</button>
+				</div>
+				<div class="col-sm-6">
+					<br> <br> <br> <br> <br>
+					<a href="#/login" class="btn btn-custom">
+						<i class="fa fa-sign-out fa-5x" aria-hidden="true"></i><br> <span
+							style="font-size: 20px;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="workorder" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header text-center" style="background-color:#1ABC9C;color: white;">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Work Order</h4>
+			</div>
+			<div class="modal-body">
+			<br>
+			<br>
+				<form name = "form" class="form-horizontal">
+	<div class="form-group">
+    <label class="control-label col-sm-3" for="empname">Employee Name</label>
+    <div class="col-sm-7">
+    <input type="text" name="empname" class="form-control" id="empname" ng-model="empname" required>
+    <span ng-show="form.empname.$dirty && form.empname.$error.required" class="help-block">Employee name is required</span>
+    </div>
+    
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="timein">Time In:</label>
+    <div class="col-sm-7">
+    <input type="time" name="timein" class="form-control" id="timein" ng-model="timein" required>
+    <span ng-show="form.timein.$dirty && form.timein.$error.required" class="help-block">Time-in is required</span>
+    </div>
+  </div>
+  	<div class="form-group">
+    <label class="control-label col-sm-3" for="timeout">Time Out:</label>
+    <div class="col-sm-7">
+    <input type="time" name="timeout" class="form-control" id="timeout" ng-model="timeout" required>
+    <span ng-show="form.timeout.$dirty && form.timeout.$error.required" class="help-block">Time-out is required</span>
+    </div>
+  </div>
+  	<div class="form-group">
+    <label class="control-label col-sm-3" for="phnNo">Worked Hours:</label>
+    <div class="col-sm-7">
+    <input type="time" name="worked"  class="form-control" id="worked" ng-model="worked" required>
+   <span ng-show="form.worked.$dirty && form.worked.$error.required" class="help-block">Worked is required</span> 
+    </div>
+  </div>
+ 
+  
+  <center><button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-custom"><b>Submit</b></button>
+  	<img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+  </center>
+</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div id="stonedetails" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Stone Details</h4>
+			</div>
+			<div class="modal-body">
+			<br>
+			<br>
+			<form name = "form" class="form-horizontal">
+	<div class="form-group">
+    <label class="control-label col-sm-3" for="stonewidth">Stone Width (mm):</label>
+    <div class="col-sm-7">
+    <input type="number" name="stonewidth" class="form-control" id="stonewidth" ng-model="stonewidth" required>
+    <span ng-show="form.stonewidth.$dirty && form.stonewidth.$error.required" class="help-block">Stone Width is required</span>
+    </div>
+    
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="stoneheight">Stone Height (mm):</label>
+    <div class="col-sm-7">
+    <input type="number" name="stoneheight" class="form-control" id="stoneheight" ng-model="stoneheight" required>
+    <span ng-show="form.stoneheight.$dirty && form.stoneheight.$error.required" class="help-block">Stone Height is required</span>
+    </div>
+  </div>
+  	<div class="form-group">
+    <label class="control-label col-sm-3" for="stonelength">Stone Length (mm):</label>
+    <div class="col-sm-7">
+    <input type="number" name="stonelength" class="form-control" id="stonelength" ng-model="stonelength" required>
+    <span ng-show="form.stonelength.$dirty && form.stonelength.$error.required" class="help-block">Stone Length is required</span>
+    </div>
+  </div>
+  	<div class="form-group">
+    <label class="control-label col-sm-3" for="stonetype">Stone Type:</label>
+    <div class="col-sm-7">
+    <input type="text" name="stonetype"  class="form-control" id="stonetype" ng-model="stonetype" required>
+   <span ng-show="form.stonetype.$dirty && form.stonetype.$error.required" class="help-block">Stone Type is required</span> 
+    </div>
+  </div>
+  	<div class="form-group">
+    <label class="control-label col-sm-3" for="stonecolour">Stone Colour:</label>
+    <div class="col-sm-7">
+    <input type="text" name="stonecolour"  class="form-control" id="stonecolour" ng-model="stonecolour" required>
+   <span ng-show="form.stonecolour.$dirty && form.stonecolour.$error.required" class="help-block">Stone Colour is required</span> 
+    </div>
+  </div>
+  	<div class="form-group">
+    <label class="control-label col-sm-3" for="quantity">Quantity:</label>
+    <div class="col-sm-7">
+    <input type="number" name="quantity"  class="form-control" id="quantity" ng-model="quantity" required>
+   <span ng-show="form.quantity.$dirty && form.quantity.$error.required" class="help-block">Quantity is required</span> 
+    </div>
+  </div>
+ 
+  
+  <center><button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-custom"><b>Submit</b></button>
+  	<img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+  </center>
+</form>
+			
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div id="shareimages" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Share Images</h4>
+			</div>
+			<div class="modal-body">
+				<p>Some text in the modal.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
